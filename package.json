@@ -1,0 +1,24 @@
+{
+  "name": "node-mongo",
+  "version": "1.0.0",
+  "description": "A simple app that connects to a mongo db using Node as the backend",
+  "main": "app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiramfernandes/node-mongo.git"
+  },
+  "author": "Hiram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiramfernandes/node-mongo/issues"
+  },
+  "homepage": "https://github.com/hiramfernandes/node-mongo#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
