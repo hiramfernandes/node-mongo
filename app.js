@@ -1,16 +1,16 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
 
-const port = 3000;
-const app = express();
+const mongoService = require('./database/mongo');
 
 dotenv.config();
 
-app.use('/', (req, res, next) => {
-    res.send('Main page');
+const port = process.env.PORT_NUMBER || 3999;
+const app = express();
 
-    // Create new Purchase
-    
-});
+app.use(bodyParser.json());
+
+app.use('/', mongoService.savePurchase);
 
 app.listen(port);
