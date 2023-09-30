@@ -10,7 +10,10 @@ mongoose
 const createPurchase = async (req, res, next) => {
     const createdPurchase = new Purchase({
         purchaseDate: req.body.purchaseDate,
-        vendorName: req.body.vendorName
+        vendorName: req.body.vendorName,
+        totalAmount: req.body.totalAmount,
+        items: req.body.items,
+        url: req.body.url,
     })
 
     const result = await createdPurchase.save();
