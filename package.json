@@ -4,7 +4,8 @@
   "description": "A simple app that connects to a mongo db using Node as the backend",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app"
+    "start:dev": "nodemon app",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
