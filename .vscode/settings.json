@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/31dc822d-7bbc-4ea6-bbe4-d12072395b08/resourceGroups/node-mongo-app/providers/Microsoft.Web/sites/node-mongo",
+    "appService.deploySubpath": "."
+}

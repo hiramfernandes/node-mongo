@@ -6,7 +6,11 @@ dotenv.config();
 // const mongoService = require('./database/mongo');
 const mongooseService = require('./database/mongoose');
 
-const port = process.env.PORT_NUMBER || 3999;
+// Log lack of port info on settings
+if (!process.env.PORT_NUMBER)
+    console.log('Fallback applied for port - not found on process.emv');
+
+const port = process.env.PORT_NUMBER || 3000;
 const app = express();
 
 app.use(bodyParser.json());
