@@ -5,7 +5,7 @@ const Purchase = require('../models/purchase');
 if (!process.env.MONGODB_CONNECTION_URL)
     console.log('Lack of mongo db connection found on process.env');
 
-const url = process.env.MONGODB_CONNECTION_URL || 'mongodb+srv://hiram:Hiram%40123@cluster0.1pcm5ed.mongodb.net/control?retryWrites=true&w=majority';
+const url = process.env.MONGODB_CONNECTION_URL;
 
 mongoose
     .connect(url)
