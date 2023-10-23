@@ -1,0 +1,7 @@
+{ 
+    "env": {
+        "MONGO_USER": "hiram",
+        "MONGO_PASSWORD": "Hiram%40123",
+        "MONGO_DEFAULT_DATABASE": "control"
+    } 
+}

@@ -1,9 +1,9 @@
 const MongoClient = require('mongodb').MongoClient;
 
-if (!process.env.MONGODB_CONNECTION_URL)
-    console.log('Lack of mongo db connection found on process.env');
+if (!process.env.MONGO_USER || !process.env.MONGO_PASSWORD || !process.env.MONGO_DEFAULT_DATABASE)
+    console.log('Db connection settings missing from process.env');
 
-const url = process.env.MONGODB_CONNECTION_URL || 'mongodb+srv://hiram:Hiram%40123@cluster0.1pcm5ed.mongodb.net/control?retryWrites=true&w=majority';
+const url = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.1pcm5ed.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`
 
 const client = new MongoClient(url);
 
@@ -18,7 +18,6 @@ const savePurchase = async (req, res, next) => {
         await client.connect();
         const db = client.db('control');
         const result = db.collection('purchases').insertOne(newPurchase);
-
     } catch (error) {
         res.json({message: `Could not insert product: ${error}`});
         return;

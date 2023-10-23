@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const Purchase = require('../models/purchase');
 
-if (!process.env.MONGODB_CONNECTION_URL)
-    console.log('Lack of mongo db connection found on process.env');
+if (!process.env.MONGO_USER || !process.env.MONGO_PASSWORD || !process.env.MONGO_DEFAULT_DATABASE)
+    console.log('Db connection settings missing from process.env');
 
-const url = process.env.MONGODB_CONNECTION_URL;
+const url = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.1pcm5ed.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`
 
 mongoose
     .connect(url)
