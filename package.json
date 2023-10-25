@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start:dev": "nodemon app",
-    "start": "node app"
+    "start": "NODE_ENV=production MONGO_USER=hiram MONGO_PASSWORD=Hiram%40123 MONGO_DEFAULT_DATABASE=control node app"
   },
   "repository": {
     "type": "git",
